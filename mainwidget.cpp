@@ -86,7 +86,7 @@ void MainWidget::slotFinished()
 {
     progress->hide();
     btnCancel->hide();
-    textEdit->append(tr("下载完成"));
+    textEdit->append(tr("download finished"));
 }
 
 void MainWidget::slotProgress(int total, int received, QString sSpeed,int leftHour, int leftMin, int leftSec)
@@ -95,7 +95,7 @@ void MainWidget::slotProgress(int total, int received, QString sSpeed,int leftHo
     progress->setValue(received);
     progress->setMaximum(total);
 
-    textEdit->setText(QString("file size: %1MB    已下载: %2MB\n\n下载速度: %3MB/s\n\n剩余时间: %4小时 %5分钟 %6秒 ")
+    textEdit->setText(QString(tr("file size: %1MB    download: %2MB speed: %3MB/s time left: %4h %5m %6s"))
                       .arg(total)
                       .arg(received)
                       .arg(sSpeed)
